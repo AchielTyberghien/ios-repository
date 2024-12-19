@@ -21,6 +21,7 @@ struct AttractionView: View {
             }else{
                 Text("Select attraction ...")
             }
+            Text("test")
             
         }
     }
