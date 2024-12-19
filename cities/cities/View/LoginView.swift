@@ -9,22 +9,24 @@ import SwiftUI
 
 struct LoginView: View {
     @State var userDataStore = UserDatastore()
-    @State var login : Login = Login()
+    @State var username: String = ""
+    @State var password: String = ""
+    @State var token : String = ""
     var body: some View {
         VStack{
             GroupBox("Login user") {
                 VStack{
                     HStack{
                         Image(systemName: "person")
-                        TextField("username?", text: $login.username)
+                        TextField("username?", text: $username)
                     }
                     HStack{
                         Image(systemName: "person.badge.key")
-                        TextField("password?", text: $login.password)
+                        TextField("password?", text: $password)
                     }
                     HStack{
                         Image(systemName: "number.square")
-                        TextField("token?", text: $login.tokentry)
+                        TextField("token?", text: $token)
                     }
                     NavigationLink("login"){
                         OverviewCitiesView()

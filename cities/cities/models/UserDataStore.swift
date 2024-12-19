@@ -23,9 +23,15 @@ class UserDatastore {
         return users
     }
     
-    func login(loginUser : User) -> Bool {
+    func login(username: String, password: String) -> Bool {
         let confirm = users.users.contains{ user in
-            user.username == loginUser.username && user.password == loginUser.password
+            user.username == username && user.password == password
+        }
+        if(confirm){
+            let user = users.users.filter{ user in
+                user.username == username && user.password == password
+            }
+            loggedinUser = user.first
         }
         return confirm
     }

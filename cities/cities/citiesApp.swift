@@ -10,9 +10,10 @@ import SwiftUI
 @main
 struct citiesApp: App {
     @State var dataStore = CityDatastore()
+    @State var userDataStore = UserDatastore()
     var body: some Scene {
         WindowGroup {
-            ContentView().environment(dataStore)
+            ContentView().environment(dataStore).environment(userDataStore)
         }
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ListOfCitiesView: View {
     @Environment(CityDatastore.self) private var dataStore
+    @Environment(UserDatastore.self) private var userDataStore
     @State var selectedCity: City?
     var body: some View {
         VStack{
@@ -22,6 +23,8 @@ struct ListOfCitiesView: View {
                     }.buttonStyle(.plain)
                 }
             }
+            Divider()
+            Text("Logged in user: \(userDataStore.loggedinUser?.username ?? "")")
             
         }
         
